@@ -45,8 +45,9 @@ public class BlocController {
                                   @PathVariable("id-bloc") Long idB ){
         return blocService.getChambresParBlocEtType(idB, TypeChambre);
     }
-
-
-
-
+    /*************/
+    @GetMapping("/getBlocParIdUniv/{id-univ}")
+    public  List<Bloc> affectBlocChambre(@PathVariable ("id-univ") Long idUniv ){
+        return blocService.getByIdUniv(idUniv);
+    }
 }

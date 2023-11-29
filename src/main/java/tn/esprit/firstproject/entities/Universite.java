@@ -1,5 +1,6 @@
 package tn.esprit.firstproject.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -19,6 +20,7 @@ public class Universite {
     private long idUniversite ;
     private String nomUniversite ;
     private String adresse ;
+    @JsonIgnore
     @OneToOne (mappedBy = "universite",cascade = CascadeType.ALL)
     private Foyer foyer;
 

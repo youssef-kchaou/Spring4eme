@@ -1,5 +1,6 @@
 package tn.esprit.firstproject.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,6 +23,4 @@ public class Foyer {
     private List<Bloc> blocs;
     @OneToOne
     private Universite universite;
-
-
 }

@@ -3,6 +3,7 @@ package tn.esprit.firstproject.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tn.esprit.firstproject.entities.Bloc;
+import tn.esprit.firstproject.entities.ChamberType;
 import tn.esprit.firstproject.entities.Chambre;
 import tn.esprit.firstproject.repository.IBlocRepository;
 import tn.esprit.firstproject.repository.IChambreRepository;
@@ -51,4 +52,15 @@ public class ChambreServiceImpl implements IChambreService{
         }
         return bloc;
     }
+
+    @Override
+    public List<Chambre> findByBlocIdBlocAndTypeChambreJPQL(long idBloc, ChamberType typeChambre) {
+        return iChambreRepository.findByBlocIdBlocAndTypeChambreJPQL(idBloc, typeChambre) ;
+    }
+
+    @Override
+    public List<Chambre> getChambreParTypeEtIdBloc(long idBloc, ChamberType typeChambre) {
+        return iChambreRepository.findChambreByBlocIdBlocAndTypeC(idBloc,typeChambre) ;
+    }
+
 }

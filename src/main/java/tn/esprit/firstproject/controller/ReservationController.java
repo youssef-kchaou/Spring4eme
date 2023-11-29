@@ -37,4 +37,13 @@ public class ReservationController {
         Reservation reservation = reservationService.modifyReservation(R);
         return reservation;
     }
+    @GetMapping("/getByIdBloc/{bloc-id}")
+    public Reservation getByIdBloc(@PathVariable("bloc-id") Long RId) {
+        Reservation reservation = reservationService.retrieveReservation(RId);
+        return reservation;
+    }
+    @GetMapping("/getByAnneEtNomUniv/{annee}/{nom-univ}")
+    public List<Reservation> getByIdBloc(@PathVariable("annee") int annee,@PathVariable("nom-univ") String nom) {
+        return reservationService.findByAnneeUniversitaire_YearAndNomUnuiversite(annee,nom) ;
+    }
 }

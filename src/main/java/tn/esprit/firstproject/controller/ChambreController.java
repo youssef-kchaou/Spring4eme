@@ -3,6 +3,7 @@ package tn.esprit.firstproject.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import tn.esprit.firstproject.entities.Bloc;
+import tn.esprit.firstproject.entities.ChamberType;
 import tn.esprit.firstproject.entities.Chambre;
 import tn.esprit.firstproject.repository.IBlocRepository;
 import tn.esprit.firstproject.services.IBloc;
@@ -46,5 +47,14 @@ public class ChambreController {
                                   @PathVariable("id-bloc") Long idB ){
         return chambreService.affectBlocChambre(idChambres,idB);
     }
-
+    @GetMapping("/getChambresParBlocEtTypeJPQL/{idBloc}/{Ctype}")
+    public List<Chambre>getChambresParBlocEtTypeJPQL(@PathVariable("idBloc") Long idBloc,@PathVariable("Ctype") ChamberType c)
+    {
+        return chambreService.findByBlocIdBlocAndTypeChambreJPQL(idBloc,c);
+    }
+    @GetMapping("/getChambresParBlocEtTypeKeyWords/{idBloc}/{Ctype}")
+    public List<Chambre>getChambresParTypeEtIdBloc(@PathVariable("idBloc") Long idBloc,@PathVariable("Ctype") ChamberType c)
+    {
+        return chambreService.getChambreParTypeEtIdBloc(idBloc,c);
+    }
 }

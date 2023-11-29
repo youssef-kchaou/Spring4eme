@@ -13,5 +13,6 @@ public interface IBloc {
     public void removeBloc(Long blocId);
     public Bloc modifyBloc(Bloc bloc);
     public List<Chambre> getChambresParBlocEtType (long idBloc, ChamberType typeC) ;
+    public List<Bloc> getByIdUniv(Long iduniversite);
 
 }
