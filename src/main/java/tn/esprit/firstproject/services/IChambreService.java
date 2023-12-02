@@ -15,4 +15,6 @@ public interface IChambreService {
         public Bloc affectBlocChambre(List<Long> idChambres, long idBloc);
         public List<Chambre> findByBlocIdBlocAndTypeChambreJPQL(long idBloc, ChamberType typeChambre);
         public List<Chambre> getChambreParTypeEtIdBloc(long idBloc, ChamberType typeChambre);
+
+        public Chambre AddChambreReservationEtudiant(Chambre c);
 }

@@ -63,4 +63,9 @@ public class ChambreServiceImpl implements IChambreService{
         return iChambreRepository.findChambreByBlocIdBlocAndTypeC(idBloc,typeChambre) ;
     }
 
+    @Override
+    public Chambre AddChambreReservationEtudiant(Chambre c) {
+        return iChambreRepository.save(c);
+    }
+
 }

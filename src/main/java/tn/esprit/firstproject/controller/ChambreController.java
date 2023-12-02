@@ -57,4 +57,8 @@ public class ChambreController {
     {
         return chambreService.getChambreParTypeEtIdBloc(idBloc,c);
     }
+    @PostMapping("/AddChambre-Reservation-Etudiant")
+    public Chambre AddChambreReservationEtudiant(@RequestBody Chambre c){
+        return chambreService.AddChambreReservationEtudiant(c);
+    }
 }

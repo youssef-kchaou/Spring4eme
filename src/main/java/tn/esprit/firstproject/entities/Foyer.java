@@ -20,7 +20,9 @@ public class Foyer {
     private String nomFoyer ;
     private long capcipteFoyer ;
     @OneToMany (cascade = CascadeType.ALL, mappedBy = "foyer")
+    @JsonIgnore
     private List<Bloc> blocs;
     @OneToOne
+    @JsonIgnore
     private Universite universite;
 }

@@ -20,8 +20,8 @@ public class Universite {
     private long idUniversite ;
     private String nomUniversite ;
     private String adresse ;
-    @JsonIgnore
     @OneToOne (mappedBy = "universite",cascade = CascadeType.ALL)
+
     private Foyer foyer;
 
 }
